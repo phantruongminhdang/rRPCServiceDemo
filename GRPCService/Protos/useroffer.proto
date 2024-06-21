@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option csharp_namespace = "GRPCService.Protos";
+
+service UserOfferService {
+	rpc GetUserOfferList (EmptyRequestArg) returns (UserOffers);
+}
+
+message UserOfferDetail {
+	int32 id = 1;
+	string productName = 2;
+	string offerDescription = 3;
+}
+
+message EmptyRequestArg{
+
+}
+
+message UserOffers {
+  repeated UserOfferDetail items = 1;
+}
